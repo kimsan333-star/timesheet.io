@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 現在の日付を設定
     setCurrentDate();
+    
+    // ハンバーガーメニューのトグル
+    const menuIcon = document.getElementById('menu-icon');
+    const menuBox = document.getElementById('menu-box');
+    
+    menuIcon.addEventListener('click', function() {
+        menuBox.style.display = menuBox.style.display === 'block' ? 'none' : 'block';
+    });
 });
 
 document.getElementById('save-button').addEventListener('click', function() {
@@ -16,7 +24,7 @@ document.getElementById('attendance-form').addEventListener('submit', function(e
     alert('登録申請が完了しました。');
 });
 
-// 日付の加算・減算ボタンの機能
+// 日付選択ボタンの機能
 document.getElementById('date-increment').addEventListener('click', function() {
     changeDate(1);
 });
